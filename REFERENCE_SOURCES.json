@@ -1,0 +1,57 @@
+{
+  "checked_on": "2026-10-07",
+  "purpose": "Select a documented source for a runnable project on aoli0919 GitHub.",
+  "projects": [
+    {
+      "name": "xiaohongshu-mcp",
+      "repository": "https://github.com/xpzouying/xiaohongshu-mcp",
+      "license": "Apache-2.0",
+      "reference_tag": "v2.5.5",
+      "reference_commit": "a5c8f7799980ba1fdd501999843eb2d17e4c9a9f",
+      "local_reference": "xiaohongshu-mcp",
+      "available": "Go service, HTTP/MCP tools, login and browser actions, deployment documentation",
+      "reuse_mode": "Reuse licensed code while retaining LICENSE, attribution and modification notices. Check third-party assets separately."
+    },
+    {
+      "name": "x-mcp",
+      "repository": "https://github.com/xpzouying/x-mcp",
+      "license": null,
+      "available": "Public documentation and Skill; no browser extension implementation found in the current file tree",
+      "reuse_mode": "Study the workflow; implement independently. No code reuse license confirmed."
+    },
+    {
+      "name": "Auto Agent",
+      "website": "https://aredink.com/",
+      "available": "Public product pages",
+      "reuse_mode": "Study the workflow; do not copy branding, assets or private implementation."
+    },
+    {
+      "name": "CVmax",
+      "website": "https://cvmax.cn/index",
+      "available": "Public product pages",
+      "reuse_mode": "Study the workflow; do not copy branding, assets or private implementation."
+    },
+    {
+      "name": "Product Hunt Daily",
+      "website": "https://product-daily.haha.ai/",
+      "repository_link_seen": "https://github.com/xpzouying/product-daily",
+      "repository_verified_public": false,
+      "available": "Public date-based reports; linked source repository could not be read during the prior study",
+      "reuse_mode": "Implement independently with a documented data source; no source code license confirmed."
+    },
+    {
+      "name": "go-clean-arch",
+      "repository": "https://github.com/xpzouying/go-clean-arch",
+      "license": null,
+      "available": "Public Go example source",
+      "reuse_mode": "Study architecture; no code reuse license confirmed."
+    },
+    {
+      "name": "Feishu-EX-ChatGPT",
+      "repository": "https://github.com/ConnectAI-E/Feishu-EX-ChatGPT",
+      "license": "GPL-3.0",
+      "available": "Public Feishu bot and LLM/plugin integration source",
+      "reuse_mode": "Only derive under the applicable GPL terms, retaining license and corresponding source obligations."
+    }
+  ]
+}

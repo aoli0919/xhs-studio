@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小红书创作工作台</title><link rel="stylesheet" href="style.css"><script defer src="app.js"></script></head>
+<body>
+<header class="topbar"><div class="brand"><span class="mark" aria-hidden="true">写</span><div><strong>小红书创作工作台</strong><span class="subtitle">把想法整理成下一篇笔记</span></div></div><span id="mode" class="badge">正在连接本地服务</span></header>
+<div id="notice" class="notice" role="status" hidden></div>
+<main class="layout">
+<aside class="sidebar"><div class="section-heading"><h2>我的草稿</h2><button id="new-draft" type="button">＋ 新建</button></div><nav id="draft-list" aria-label="草稿列表"></nav><p class="small muted">编辑后自动保存。发布前会再次确认。</p></aside>
+<section class="editor" aria-labelledby="editor-title"><div class="section-heading"><div><p class="eyebrow">CREATOR WORKBENCH</p><h1 id="editor-title">编辑笔记</h1></div><span id="save-status" class="small" role="status">尚未编辑</span></div>
+<form id="editor-form">
+<label for="title">标题 <span id="title-count" class="muted small">0 字</span></label><input id="title" name="title" placeholder="给这篇笔记一个清楚的标题" autocomplete="off">
+<label for="content">正文</label><textarea id="content" name="content" rows="12" placeholder="从一个具体的发现开始写……"></textarea>
+<label for="tags">标签</label><input id="tags" name="tags" placeholder="用空格或逗号分隔，例如 科技 博士日常" autocomplete="off"><p class="help">无需手动加 #，保存时会拆分为标签。</p>
+<div class="section-heading image-heading"><label for="images">配图</label><span id="image-count" class="small muted">0 张</span></div><label class="upload" for="images"><span>＋ 选择图片</span><span class="small muted">JPEG / PNG / WebP · 每张不超过 10 MiB</span></label><input id="images" class="file-input" type="file" accept="image/jpeg,image/png,image/webp" multiple><div id="image-list" class="image-grid"></div>
+<div class="options"><div><label for="schedule">定时发布（可选）</label><input id="schedule" type="datetime-local"><p class="help">按本机时区填写；提交时转换为 ISO 时间。</p></div><div><label for="visibility">可见范围</label><select id="visibility"><option value="public">公开</option><option value="private">仅自己可见</option></select></div></div>
+<label class="checkbox"><input id="original" type="checkbox">声明原创</label>
+<div class="editor-actions"><button id="delete-draft" class="danger quiet" type="button">删除草稿</button><div><button id="save-draft" class="secondary" type="button">立即保存</button><button id="prepare" class="primary" type="button">检查并发布</button></div></div>
+</form><div id="recovery-panel" class="recovery-panel" hidden><p id="recovery-info" class="small"></p><button id="reset-publish" class="secondary" type="button">已核对，未发布，解除锁定</button></div><p id="editor-message" class="message" role="status" aria-live="polite"></p></section>
+<aside class="account"><p class="eyebrow">ACCOUNT</p><h2>发布账号</h2><div id="account-status" class="account-state">尚未获取账号状态</div><div class="account-actions"><button id="refresh-login" class="secondary" type="button">刷新状态</button><button id="login" type="button">扫码登录</button></div><div id="qr-panel" hidden><img id="qr-image" alt="小红书登录二维码"><p id="qr-info" class="small muted"></p><p class="small">用小红书 App 扫码后，点击“刷新状态”确认登录。</p></div><hr><h3>发布前核对</h3><ul class="checklist"><li>标题、正文和配图是否完整</li><li>可见范围与发布时间是否正确</li><li>账号是否为你准备使用的账号</li></ul><p class="small muted">提交后请到小红书核对审核与可见状态。</p></aside>
+</main>
+<dialog id="confirm-dialog"><div class="dialog-heading"><h2>确认发布这篇笔记？</h2><button id="close-confirm" class="quiet" type="button" aria-label="关闭发布确认">×</button></div><p id="confirm-title" class="confirm-title"></p><dl id="confirm-details"></dl><div id="confirm-warnings" class="warnings" hidden></div><p class="small muted">点击“确认发布”后会向本地服务提交发布请求。</p><div class="dialog-actions"><button id="cancel-confirm" class="secondary" type="button">返回编辑</button><button id="confirm-publish" class="primary" type="button">确认发布</button></div><p id="publish-message" class="message" role="status" aria-live="polite"></p></dialog>
+</body></html>

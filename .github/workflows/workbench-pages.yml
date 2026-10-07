@@ -1,0 +1,39 @@
+name: Workbench demo
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'workbench/web/**'
+      - '.github/workflows/workbench-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: workbench-pages
+  cancel-in-progress: true
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check browser script
+        run: node --check workbench/web/app.js
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: workbench/web
+      - name: Deploy static demo
+        id: deployment
+        uses: actions/deploy-pages@v4

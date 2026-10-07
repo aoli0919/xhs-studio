@@ -53,3 +53,9 @@ docker/docker-compose.override.yml
 # 本地分析/调试产物，不进仓库
 debug/
 .worktrees/
+
+# Ao Li: local creator workbench runtime (2026-10-07)
+workbench/.runtime/
+__pycache__/
+*.pyc
+workbench/test-output/
