@@ -14,3 +14,9 @@ docker
 .DS_Store
 
 cookies.json
+
+# Ao Li: do not send local creator data to Docker builders (2026-10-07)
+workbench/.runtime
+workbench/test-output
+**/__pycache__
+**/*.pyc
