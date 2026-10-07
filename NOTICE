@@ -1,0 +1,18 @@
+XHS Studio
+
+This project is derived from xpzouying/xiaohongshu-mcp:
+https://github.com/xpzouying/xiaohongshu-mcp
+
+Upstream copyright notice:
+Copyright 2025 xpzouying
+
+The upstream source and its Apache License, Version 2.0 are retained.
+See LICENSE for the full license terms.
+
+Copyright 2026 Ao Li
+Ao Li added the Python local bridge, web workbench, related documentation,
+and workbench CI configuration. The main README was replaced to describe
+this derivative project; the original is preserved in README_UPSTREAM.md.
+
+This NOTICE was added by this derivative project. It is not represented
+as a NOTICE supplied by the upstream project, and does not modify LICENSE.

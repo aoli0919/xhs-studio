@@ -1,0 +1,35 @@
+name: Workbench checks
+
+on:
+  push:
+    branches: ['**']
+    paths:
+      - 'workbench/**'
+      - '.github/workflows/workbench.yml'
+  pull_request:
+    paths:
+      - 'workbench/**'
+      - '.github/workflows/workbench.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python unit tests
+        run: python -m unittest discover -s workbench/tests
+      - name: JavaScript syntax
+        run: node --check workbench/web/app.js
