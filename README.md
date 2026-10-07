@@ -2,6 +2,8 @@
 
 XHS Studio 是基于 [xpzouying/xiaohongshu-mcp](https://github.com/xpzouying/xiaohongshu-mcp) 的衍生项目，由 Ao Li 增加本地 Python 桥接和网页工作台。上游提供小红书登录、浏览器自动化及 MCP 能力；本项目增加草稿编辑、图片上传、预览校验和手动确认提交流程。
 
+[在线体验草稿工作台](https://aoli0919.github.io/xhs-studio/)：演示模式支持编辑、图片预览和浏览器本地保存；扫码与真实发布请使用下方的本地运行方式。
+
 上游 Go 源码和 Apache-2.0 [LICENSE](LICENSE) 保留在仓库中。原 README 原文保存在 [README_UPSTREAM.md](README_UPSTREAM.md)，其中的作者经历、捐赠信息和演示属于上游作者。新增工作台见 [workbench/README.md](workbench/README.md)，归属说明见 [NOTICE](NOTICE)。本项目与小红书官方没有隶属关系，发布通过上游浏览器自动化完成。
 
 ![工作台界面，截图使用测试草稿](workbench/assets/workbench.png)
@@ -45,7 +47,7 @@ python3 workbench/run.py --connect-existing http://127.0.0.1:18061 --backend-tok
 
 ## 数据与验证边界
 
-令牌、cookies、上传图片和草稿位于 `workbench/.runtime/`，属于本机运行数据，不应提交 Git。分享项目时只分享源码；重新下载代码时不要覆盖已有运行数据。
+令牌、cookies、上传图片和草稿位于 `workbench/.runtime/`，属于本机运行数据，已从 Git 和 Docker 构建上下文排除。分享项目时只分享源码；重新下载代码时不要覆盖已有运行数据。
 
 真实发帖尚未测试，需用户扫码并提供具体发布内容后验证。后端提交成功不等于笔记已通过审核或对外可见，最终结果应回到小红书检查。
 
